@@ -14,6 +14,11 @@ jobs:
       - name: Java
         run: sudo apt update && sudo apt install openjdk-17-jdk
 
+      - name: Set JAVA_HOME to Java 17
+        run: |
+          echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV
+          echo "PATH=$JAVA_HOME/bin:$PATH" >> $GITHUB_ENV
+
       - name: Checkout Code
         uses: actions/checkout@v3
 
