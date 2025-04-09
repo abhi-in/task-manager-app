@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Java
+        run: sudo apt update && sudo apt install openjdk-17-jdk
+
       - name: Checkout Code
         uses: actions/checkout@v3
 
