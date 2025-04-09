@@ -43,6 +43,9 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x springBoot/task-manager-backend/gradlew
 
+      - name: Clean Gradle cache
+        run: ./gradlew clean
+        
       - name: Build with Gradle
-        run: cd springBoot/task-manager-backend && ./gradlew build
+        run: cd springBoot/task-manager-backend && ./gradlew build --no-configuration-cache --stacktrace
 
