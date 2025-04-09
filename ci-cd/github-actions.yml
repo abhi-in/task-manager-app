@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'  # Specify Java 17
+          distribution: 'adoptopenjdk'
 
       - name: Set JAVA_HOME to Java 17
         run: echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk" >> $GITHUB_ENV
